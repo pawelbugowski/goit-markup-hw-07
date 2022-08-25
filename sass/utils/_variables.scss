@@ -1,0 +1,59 @@
+$MainColorFirst: #212121;
+$MainColorSecond: #ffffff;
+$MainColorThird: #000000;
+$BrandColorFirst: #2196f3;
+$BrandColorSecond: #2f303a;
+$BrandColorThird: #757575;
+$BrandColorFourth: #f5f4fa;
+$BrandColorFifth: rgba(255, 255, 255, 0.6);
+$BrandColorSixth: #afb1b8;
+$BrandColorSeventh: rgba(255, 255, 255, 0.1);
+$BrandColorEighth: #ececec;
+$BrandColorNinth: rgba(0, 0, 0, 0.2);
+$BrandColorTenth: #000000;
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: $MainColorFirst;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  width: 696px;
+  margin: 0;
+}
+
+h3 {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+h4 {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  text-align: left;
+  padding-left: 0px;
+  flex-wrap: wrap;
+}
+
+.section {
+  max-width: 1600px;
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.container {
+  width: 1200px;
+  padding-left: 200px;
+}
