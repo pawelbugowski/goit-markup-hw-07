@@ -1,24 +1,26 @@
-.lorem-list-item {
-  width: 270px;
-  margin-left: 15px;
-  margin-right: 15px;
-}
+.lorem-list {
+  &__item {
+    width: 270px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 
-.lorem-list-header {
-  font-weight: 700;
-  font-size: 14px;
-  padding: 30px 0 10px 0;
-}
+  &__header {
+    font-weight: 700;
+    font-size: 14px;
+    padding: 30px 0 10px 0;
+  }
 
-.lorem-list-text {
-  color: var(--brand-color-third);
-  font-size: 14px;
-  line-height: 1.71;
-}
+  &__text {
+    color: $BrandColorThird;
+    font-size: 14px;
+    line-height: 1.71;
+  }
 
-.lorem-list-icon {
-  padding: 25px 100px;
-  height: 70px;
-  width: 70px;
-  background-color: var(--brand-color-fourth);
+  &__icon {
+    padding: 25px 100px;
+    height: 70px;
+    width: 70px;
+    background-color: $BrandColorFourth;
+  }
 }

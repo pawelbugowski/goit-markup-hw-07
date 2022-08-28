@@ -18,7 +18,7 @@
   pointer-events: none;
 }
 
-.modal-window {
+.modal {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -31,237 +31,229 @@
   border-radius: 4px;
   display: flex;
   align-items: center;
-}
 
-.modal-close-button {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 30px;
-  height: 30px;
-  background-color: $MainColorSecond;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  cursor: pointer;
-}
+  &__close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    background-color: $MainColorSecond;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+  }
 
-.modal-form {
-  position: absolute;
-  width: 448px;
-  min-height: 501px;
-  padding: 40px 0;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
+  &__form {
+    position: absolute;
+    width: 448px;
+    min-height: 501px;
+    padding: 40px 0;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 
-.modal-form-box {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
+    &__box {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
 
-.modal-form-label {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 23px;
-  text-align: center;
-  letter-spacing: 0.03em;
-  color: $MainColorFirst;
-  width: 100%;
-}
+    &__header {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 23px;
+      text-align: center;
+      letter-spacing: 0.03em;
+      color: $MainColorFirst;
+      width: 100%;
+    }
 
-.modal-form-input-label {
-  font-size: 12px;
-  letter-spacing: 0.01em;
-  color: $BrandColorThird;
-  padding: 10px 0 4px 0;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-}
+    &__label {
+      font-size: 12px;
+      letter-spacing: 0.01em;
+      color: $BrandColorThird;
+      padding: 10px 0 4px 0;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+    }
 
-.modal-form-input-box {
-  width: 100%;
-  position: relative;
-}
+    &__input {
+      box-sizing: border-box;
+      height: 40px;
+      width: 100%;
+      border: 1px solid rgba(33, 33, 33, 0.2);
+      border-radius: 4px;
+      transition-property: border;
+      transition-duration: 250ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
-.modal-form-input-primary {
-  box-sizing: border-box;
-  height: 40px;
-  width: 100%;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-  transition-property: border;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
+      &__box {
+        width: 100%;
+        position: relative;
 
-.modal-form-input-primary:last-child {
-  height: 120px;
-}
+        &:focus-within svg {
+          fill: $BrandColorFirst;
+        }
 
-.modal-form-input-primary:not(:last-child) {
-  padding-left: 42px;
-}
+        &:focus-within input {
+          outline: $BrandColorFirst;
+        }
 
-.modal-form-input-primary:hover,
-.modal-form-input-primary:focus {
-  border: 1px solid $BrandColorFirst;
-}
+        &:focus-within textarea {
+          outline: $BrandColorFirst;
+        }
+      }
 
-.modal-form-input-icon {
-  width: 18px;
-  height: 18px;
-  fill: $MainColorFirst;
-  z-index: 5;
-  position: absolute;
-  top: 11px;
-  left: 12px;
-}
+      &:last-child {
+        height: 120px;
+      }
 
-.modal-form-input-primary::placeholder {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  letter-spacing: 0.01em;
-  color: rgba(117, 117, 117, 0.5);
-}
+      &:not(:last-child) {
+        padding-left: 42px;
+      }
 
-.modal-form textarea {
-  box-sizing: border-box;
-  width: 100%;
-  height: 120px;
-  resize: none;
-  padding: 12px 16px;
-}
+      &:hover,
+      &:focus {
+        border: 1px solid $BrandColorFirst;
+      }
 
-.modal-form-input-box:focus-within svg {
-  fill: $BrandColorFirst;
-}
+      &::placeholder {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        letter-spacing: 0.01em;
+        color: rgba(117, 117, 117, 0.5);
+      }
+    }
 
-.modal-form-input-box:focus-within input {
-  outline: $BrandColorFirst;
-}
+    &__icon {
+      width: 18px;
+      height: 18px;
+      fill: $MainColorFirst;
+      z-index: 5;
+      position: absolute;
+      top: 11px;
+      left: 12px;
+    }
 
-.modal-form-input-box:focus-within textarea {
-  outline: $BrandColorFirst;
-}
+    textarea {
+      box-sizing: border-box;
+      width: 100%;
+      height: 120px;
+      resize: none;
+      padding: 12px 16px;
+    }
 
-/* checkbox */
+    /* checkbox */
 
-.modal-form-checkbox {
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: row wrap;
-  padding: 25px 0;
-}
+    &__checkbox {
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: row wrap;
+      padding: 25px 0;
 
-.modal-form-checkbox-input {
-  appearance: none;
-}
+      &__input {
+        appearance: none;
+      }
 
-.modal-form-checkbox-icon:first-child {
-  width: 16px;
-  height: 15px;
-  fill: var(--main-color-first);
-}
+      &__icon:first-child {
+        width: 16px;
+        height: 15px;
+        fill: $MainColorFirst;
+      }
 
-.modal-form-checkbox-icon:last-child {
-  width: 16px;
-  height: 15px;
-  fill: none;
-}
+      &__icon:last-child {
+        width: 16px;
+        height: 15px;
+        fill: none;
+      }
 
-.modal-form-checkbox-text {
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
-  color: var(--brand-color-third);
-}
+      &__text {
+        font-size: 14px;
+        line-height: 1.71;
+        letter-spacing: 0.03em;
+        color: $BrandColorThird;
+      }
 
-.modal-form-checkbox-label {
-  cursor: pointer;
-  display: flex;
-}
+      &__label {
+        cursor: pointer;
+        display: flex;
+      }
 
-.modal-form-checkbox-label span:first-child {
-  position: relative;
-  padding-right: 5px;
-  width: 16px;
-  height: 15px;
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 300ms;
-}
+      &__label span:first-child {
+        position: relative;
+        padding-right: 5px;
+        width: 16px;
+        height: 15px;
+        transition: cubic-bezier(0.4, 0, 0.2, 1) 300ms;
+      }
 
-.modal-form-checkbox-label span:first-child > svg:first-child {
-  position: absolute;
-  fill: var(--main-color-first);
-}
+      &__label span:first-child > svg:first-child {
+        position: absolute;
+        fill: $MainColorFirst;
+      }
 
-.modal-form-checkbox-label span:first-child > svg:last-child {
-  position: absolute;
-  opacity: 0;
-}
+      &__label span:first-child > svg:last-child {
+        position: absolute;
+        opacity: 0;
+      }
 
-.modal-form-checkbox-label span:last-child {
-  padding-left: 8px;
-  line-height: 18px;
-}
+      &__label span:last-child {
+        padding-left: 8px;
+        line-height: 18px;
+      }
 
-.modal-form-checkbox-label:hover span:first-child > svg {
-  fill: var(--brand-color-first);
-}
+      &__label:hover span:first-child > svg {
+        fill: $BrandColorFirst;
+      }
 
-.modal-form-checkbox-input:checked
-  + .modal-form-checkbox-label
-  span:first-child
-  > svg:first-child {
-  fill: none;
-}
+      &__input:checked + &__label span:first-child > svg:first-child {
+        fill: none;
+      }
 
-.modal-form-checkbox-input:checked
-  + .modal-form-checkbox-label
-  span:first-child
-  > svg:last-child {
-  opacity: 100%;
-}
+      &__input:checked + &__label span:first-child > svg:last-child {
+        opacity: 100%;
+      }
 
-.modal-form-checkbox-link {
-  text-decoration: none;
-  color: var(--brand-color-first);
-  text-decoration: underline;
-}
+      &__link {
+        text-decoration: none;
+        color: $BrandColorFirst;
+        text-decoration: underline;
+      }
+    }
 
-/* modal button */
+    /* modal button */
 
-.modal-form-button {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  width: 200px;
-  height: 50px;
-  background: var(--brand-color-first);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  border: none;
-  justify-content: center;
-}
+    &__button {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      width: 200px;
+      height: 50px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+      border: none;
+      justify-content: center;
+      background-color: $BrandColorFirst;
 
-.modal-form-button-text {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.88;
-  display: flex;
-
-  letter-spacing: 0.06em;
-
-  color: #ffffff;
+      &__text {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.88;
+        display: flex;
+        letter-spacing: 0.06em;
+        color: $MainColorSecond;
+      }
+    }
+  }
 }
